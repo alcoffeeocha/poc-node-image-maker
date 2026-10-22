@@ -4,6 +4,7 @@ import PSDMaker from "./psd-maker.js";
 import { fileURLToPath } from "node:url";
 import type { Page } from "./types.js";
 import SVGMaker from "./svg-maker.js";
+import { FlatTIFFMaker } from "./tiff-maker.js";
 
 export const moduleFileName = fileURLToPath(import.meta.url);
 export const moduleDirName = path.dirname(moduleFileName);
@@ -19,8 +20,10 @@ export const publicDirName = path.resolve(moduleDirName, "..", "public");
 
     const psdMaker = new PSDMaker();
     const svgMaker = new SVGMaker();
+    const tiffMaker = new FlatTIFFMaker();
 
     const psdBuffer = await psdMaker.create(posterData);
+    const tiffBuffer = await tiffMaker.create(posterData);
     const svg = await svgMaker.create(posterData);
 
     await fs.writeFile(
@@ -28,6 +31,12 @@ export const publicDirName = path.resolve(moduleDirName, "..", "public");
       Buffer.from(psdBuffer),
     );
     console.info("Created a psd file: ", `${posterData.title}.psd`);
+
+    await fs.writeFile(
+      path.resolve(moduleDirName, "..", `${posterData.title}.tiff`),
+      Buffer.from(tiffBuffer),
+    );
+    console.info("Created a flat tiff file: ", `${posterData.title}.tiff`);
 
     await fs.writeFile(
       path.resolve(moduleDirName, "..", `${posterData.title}.svg`),
