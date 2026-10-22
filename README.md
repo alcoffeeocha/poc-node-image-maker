@@ -9,6 +9,11 @@ Generating PSD file
 - [ag-psd](https://www.npmjs.com/package/ag-psd)
 - [canvas](https://www.npmjs.com/package/canvas)
 
+Generating TIFF file
+
+- Flatten [sharp](https://www.npmjs.com/package/sharp)
+- Layered or unflatten: no tool available yet
+
 Generating SVG file
 
 - [svg.js](https://svgjs.dev/docs/3.2/)
