@@ -1,0 +1,38 @@
+{
+  "title": "pizza-poster",
+  "w": 1080,
+  "h": 1350,
+  "bg": "#FFFFFF",
+  "layers": [
+    {
+      "type": "image",
+      "url": "pizza.png",
+      "w": 800,
+      "h": 800,
+      "x": 140,
+      "y": 275
+    },
+    {
+      "type": "text",
+      "content": "Meat Lovers",
+      "x": 330,
+      "y": 988,
+      "size": 72,
+      "lh": 1,
+      "font": "Arial",
+      "fg": "#ffffff",
+      "align": "left"
+    },
+    {
+      "type": "text",
+      "content": "Buy 1\nGet 2",
+      "x": 795,
+      "y": 1105,
+      "size": 56,
+      "lh": 1,
+      "font": "Arial",
+      "fg": "#000000",
+      "align": "left"
+    }
+  ]
+}
